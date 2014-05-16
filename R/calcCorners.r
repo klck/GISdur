@@ -15,10 +15,10 @@ calcCorners <- function(x.known, y.known,
   bC <- cos(alpha90 * pi/180) * size.x
   
   
-  A <- list(x.known + bA, y.known + aA)
-  B <- list(x.known + bB, y.known + aB)
-  C <- list(x.known + bC, y.known + aC)
-  D <- list(x.known, y.known)
+  A <- data.frame(x.known + bA, y.known + aA)
+  B <- data.frame(x.known + bB, y.known + aB)
+  C <- data.frame(x.known + bC, y.known + aC)
+  D <- data.frame(x.known, y.known)
   
   Corners <- list(A, B, C, D)
   return(Corners)
