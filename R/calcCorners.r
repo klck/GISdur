@@ -16,8 +16,8 @@ calcCorners <- function(x.known, y.known,
   
   
   A <- data.frame(x.known + bA, y.known + aA)
-  B <- data.frame(x.known + bB, y.known + aB)
-  C <- data.frame(x.known + bC, y.known + aC)
+  B <- data.frame(A[,1] + aB,A[,2] + bB)
+  C <- data.frame(B[,1] + aC,B[,2]+ bC)
   D <- data.frame(x.known, y.known)
   
   Corners <- list(A, B, C, D)
@@ -25,7 +25,10 @@ calcCorners <- function(x.known, y.known,
   
 }
 
-calcCorners(481054, 5645540, 9, 1, 48, 30)
+calcCorners(481054, 5645540, 9, 1.48, 48, 30)
+
+
+
 
 # Bisherige Überlegung: 1. Umrechungsfaktor (declintation) wird gebraucht; 
 # habe hier zum Probieren "1" genommen
