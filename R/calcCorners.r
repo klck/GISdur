@@ -15,9 +15,9 @@ calcCorners <- function(x.known, y.known,
   bC <- cos(alpha90 * pi/180) * size.x
   
   
-  A <- data.frame(x.known + aA, y.known + bA)
-  B <- data.frame(A[,1] + bB,A[,2] + aB)
-  C <- data.frame(B[,1] + bC,B[,2]+ aC)
+  A <- data.frame(x.known + bA, y.known + aA)
+  B <- data.frame(A[,1] + aB,A[,2] + bB)
+  C <- data.frame(B[,1] + aC,B[,2]+ bC)
   D <- data.frame(x.known, y.known)
   
   Corners <- list(A, B, C, D)
@@ -26,8 +26,3 @@ calcCorners <- function(x.known, y.known,
 }
 
 calcCorners(481054, 5645540, 9, 1.48, 48, 30)
-
-
-# Bisherige Überlegung: 1. Umrechungsfaktor (declintation) wird gebraucht; 
-# habe hier zum Probieren "1" genommen
-# das mit alpha ist noch sehr unschön, da nur auf unseren Fall anwendbar.
