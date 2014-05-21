@@ -16,3 +16,4 @@ loc.spec<-merge(loc,spec)
 str(loc.spec)
 
 save(loc.spec, file="data/tree_locations_species_all.RData")
+
