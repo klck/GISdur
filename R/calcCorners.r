@@ -1,7 +1,7 @@
 calcCorners <- function(x.known, y.known, 
                         orientation, declination,
                         size.x, size.y) {
-  alpha <- orientation + declination
+  alpha <- orientation - declination
   alpha270 <- alpha + 270
   alpha90 <- alpha + 90
   
