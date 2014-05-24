@@ -1,3 +1,6 @@
+source("R/deg2rad.R")
+source("R/triangle.r")
+
 calcCorners <- function(x.known, y.known, 
                         orientation, declination,
                         size.x, size.y) {
@@ -19,8 +22,9 @@ calcCorners <- function(x.known, y.known,
   Dx <- x.known
   Dy <- y.known
   Corners <- data.frame(A = list(x = Ax, y = Ay), B = list(x = Bx, 
-                                                           y = By), C = list(x = Cx, y = Cy), D = list(x = x.known, y = y.known))
+  y = By), C = list(x = Cx, y = Cy), D = list(x = x.known, y = y.known))
   return(Corners)
   
 }
 
+calcCorners(481054, 5645540, 9, 1.48, 48, 30)
