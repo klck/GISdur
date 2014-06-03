@@ -27,4 +27,4 @@ calcCorners <- function(x.known, y.known,
   
 }
 
-calcCorners(481054, 5645540, 9, 1.48, 48, 30)
+calcCorners(481054, 5645540, 9, -1.48, 48, 30)
