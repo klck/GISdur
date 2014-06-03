@@ -18,8 +18,10 @@ calcCorners <- function(x.known, y.known,
   Cy <- By + B2C[,2]
   Dx <- x.known
   Dy <- y.known
-  Corners <- data.frame(A = list(x = Ax, y = Ay), B = list(x = Bx, 
-  y = By), C = list(x = Cx, y = Cy), D = list(x = x.known, y = y.known))
+  Corners <- data.frame(A = list(x = Ax, y = Ay), 
+                        B = list(x = Bx, y = By), 
+                        C = list(x = Cx, y = Cy), 
+                        D = list(x = x.known, y = y.known))
   return(Corners)
   
 }
