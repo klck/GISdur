@@ -1,5 +1,6 @@
           ## install packages needed for plotting
           install.packages("latticeExtra")
+          install.packages("gridExtra")
 
 ## load packages needed for plotting
 library(latticeExtra)
