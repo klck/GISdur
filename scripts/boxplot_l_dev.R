@@ -1,0 +1,1 @@
+boxplot(l.dev.kiefer, l.dev.buche,l.dev.fichte)
