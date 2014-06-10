@@ -25,20 +25,31 @@ plot(loc.spec.xyz.unq.ppp.fichte)
 plot(density(loc.spec.xyz.unq.ppp.fichte))
 
 # Ripley's K-function
-rip.k <- Kest(loc.spec.xyz.unq.ppp.fichte)
-rip.k
+rip.k.fichte <- Kest(loc.spec.xyz.unq.ppp.fichte)
+rip.k.fichte
 
 # ploting rip.k
-plot(rip.k)
+plot(rip.k.fichte)
 
 # Lest ploting rip.k
-rip.l <- Lest(loc.spec.xyz.unq.ppp.fichte)
-plot(rip.l)
+rip.l.fichte <- Lest(loc.spec.xyz.unq.ppp.fichte)
+plot(rip.l.fichte)
 
 ### proper statistical analysis of point pattern (Monte Carlo simulation)
 ### statistical inference thorugh calculation of significance bands
 set.seed(234)
-env <- envelope(loc.spec.xyz.unq.ppp.fichte, fun = Lest, nsim = 99)
+env.fichte <- envelope(loc.spec.xyz.unq.ppp.fichte, fun = Lest, nsim = 99)
 
 # ploting env
-plot(env)
+plot(env.fichte)
+
+# calculate the 'true' deviation from randomness of the isotropically 
+# edge corrected L - function
+l.iso.fichte <- rip.l.fichte$iso
+l.theo.fichte <- rip.l.fichte$theo
+
+# visually inspect the behaviour of the clustering
+l.dev.fichte <- l.iso.fichte - l.theo.fichte
+plot(l.dev.fichte ~ rip.l.fichte$r, type = "l", 
+     ylab = "Deviation from theoretical distribution",
+     xlab = "Distance")
